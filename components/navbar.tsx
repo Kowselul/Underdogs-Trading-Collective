@@ -62,7 +62,7 @@ export function Navbar() {
                 className="h-[55px] w-[50px] object-contain invert"
                 priority
               />
-              <span className="text-sm font-semibold tracking-tight text-foreground">
+              <span className="text-[15px] font-bold tracking-[-0.01em] text-foreground/95">
                 Underdogs
               </span>
             </Link>
