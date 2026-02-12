@@ -57,9 +57,9 @@ export function Navbar() {
               <Image
                 src="/logo.png"
                 alt="underdogs logo"
-                width={50}
-                height={55}
-                className="h-[55px] w-[50px] object-contain invert"
+                width={44}
+                height={44}
+                className="h-[44px] w-[44px] object-contain invert"
                 priority
               />
               <span className="text-[15px] font-bold tracking-[-0.01em] text-foreground/95">
