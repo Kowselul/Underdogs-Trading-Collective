@@ -43,7 +43,6 @@ const tiers: Tier[] = [
       heading: "Qualification Requirements",
       items: [
         { label: "Join our Discord community", href: "https://discord.gg/SzQnbVrE73" },
-        "7 days minimum community activity",
         { label: "Follow Underdogs on Involio", href: "https://involio.com/underdogs" },
         "Create a trading account or complete a funded challenge using partner links",
         "Invite two members",
@@ -223,7 +222,7 @@ export function MembershipSection() {
 
                   {/* Expanded section */}
                   <div
-                    className={`grid transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                    className={`grid transition-all duration-500 ease-[cubic-bezier(0.16,_1,_0.3,_1)] ${
                       isExpanded
                         ? "grid-rows-[1fr] opacity-100"
                         : "grid-rows-[0fr] opacity-0"

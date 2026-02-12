@@ -16,7 +16,7 @@ export function Hero() {
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[hsl(var(--hero-bg))]">
       {/* Animated grid background */}
       <div
-        className={`absolute inset-0 transition-opacity duration-[1500ms] ease-out ${loaded ? "opacity-[0.03]" : "opacity-0"}`}
+        className={`absolute inset-0 transition-opacity duration-1500 ease-out ${loaded ? "opacity-[0.03]" : "opacity-0"}`}
       >
         <div
           className="h-full w-full"
@@ -33,7 +33,7 @@ export function Hero() {
 
       {/* Large watermark logo behind text */}
       <div
-        className={`pointer-events-none absolute inset-0 flex items-center justify-center transition-all duration-[2000ms] ease-out ${loaded ? "opacity-[0.04] scale-100" : "opacity-0 scale-90"}`}
+        className={`pointer-events-none absolute inset-0 flex items-center justify-center transition-all duration-2000 ease-out ${loaded ? "opacity-[0.04] scale-100" : "opacity-0 scale-90"}`}
       >
         <Image
           src="/logo.png"
@@ -70,7 +70,7 @@ export function Hero() {
 
       {/* Scroll indicator */}
       <div
-        className={`absolute bottom-8 left-1/2 -translate-x-1/2 transition-all duration-700 delay-[800] ease-out ${loaded ? "opacity-100" : "opacity-0"}`}
+        className={`absolute bottom-8 left-1/2 -translate-x-1/2 transition-all duration-700 delay-[800ms] ease-out ${loaded ? "opacity-100" : "opacity-0"}`}
       >
         <a
           href="#about"
