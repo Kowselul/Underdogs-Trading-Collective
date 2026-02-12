@@ -332,6 +332,15 @@ export function MembershipSection() {
                         }`}
                       />
                     </button>
+                    <p className="text-center text-[11px] leading-relaxed text-muted-foreground/50">
+                      By proceeding you accept our{" "}
+                      <a
+                        href="/terms"
+                        className="text-muted-foreground/70 underline underline-offset-2 hover:text-foreground/70 transition-colors"
+                      >
+                        Terms &amp; Conditions
+                      </a>
+                    </p>
                   </div>
                 </div>
               </div>
