@@ -190,16 +190,6 @@ function MemberCard({
         <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-accent/[0.12]" />
       )}
 
-      {/* Avatar — mesh gradient */}
-      <div
-        className="flex h-14 w-14 items-center justify-center rounded-xl shadow-inner"
-        style={{ background: nameToGradient(name) }}
-      >
-        <span className="text-sm font-bold tracking-wider text-white/70">
-          {getInitials(name)}
-        </span>
-      </div>
-
       {/* Name */}
       <h3 className="mt-4 text-[15px] font-semibold tracking-tight text-foreground">
         {name}
