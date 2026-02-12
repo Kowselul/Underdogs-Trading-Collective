@@ -9,7 +9,7 @@ const sections = [
     content: [
       "Welcome to Underdogs Trading Collective (\u201Cwe,\u201D \u201Cus,\u201D or \u201Cour\u201D). By accessing or using our website, community platforms, educational materials, and related services (collectively, the \u201CServices\u201D), you agree to be bound by these Terms & Conditions.",
       "Please read these Terms carefully before using our Services. If you do not agree with any part of these Terms, you should not access or use our Services.",
-      "These Terms constitute a legally binding agreement between you and Underdogs Trading Collective. We reserve the right to update these Terms at any time, and your continued use of the Services constitutes acceptance of any modifications.",
+      "These Terms constitute a legally binding agreement between you and Underdogs Trading Collective.",
     ],
   },
   {
@@ -23,7 +23,7 @@ const sections = [
   {
     title: "3. Risk Disclosure",
     content: [
-      "Trading in financial markets involves substantial risk of loss and is not suitable for every individual. The value of investments and the income derived from them can go down as well as up. You may lose more than your initial investment.",
+      "Trading in financial markets involves substantial risk of loss and is not suitable for every individual. The value of investments and the income derived from them can fluctuate drastically.",
       "Past performance of any trading strategy, methodology, or individual discussed within the collective is not indicative of future results. Markets are inherently unpredictable, and no system or educational approach can eliminate risk.",
       "You acknowledge that you are fully aware of the risks associated with trading and that you are solely responsible for any financial outcomes resulting from your trading activities.",
     ],
@@ -46,7 +46,7 @@ const sections = [
     title: "5. No Guarantees of Results",
     content: [
       "Underdogs Trading Collective makes no representations, warranties, or guarantees regarding the accuracy, completeness, or reliability of any information provided through our Services.",
-      "We do not guarantee that you will achieve any particular financial results, profits, or returns by using our educational materials or participating in our community. Individual results will vary based on numerous factors including \u2014 but not limited to \u2014 market conditions, experience, risk tolerance, and capital allocation.",
+      "We do not guarantee that you will achieve any particular financial results, profits, or returns by using our educational materials or participating in our community. Individual results will vary based on numerous factors including \u2014 but not limited to \u2014 market conditions, experience, risk tolerance,comprehension skills and capital allocation.",
       "Testimonials or case studies shared within the community represent individual experiences and are not indicative of typical results.",
     ],
   },

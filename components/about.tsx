@@ -67,7 +67,7 @@ export function About() {
               collective grounded in structure and accountability.
             </p>
             <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
-              Underdogs brings together traders committed to education, risk
+              Underdogs unites traders committed to education, risk
               management, and consistent execution. We focus on refining
               process, strengthening mindset, and building skill over time.
             </p>

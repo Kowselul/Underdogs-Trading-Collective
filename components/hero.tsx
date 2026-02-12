@@ -60,7 +60,7 @@ export function Hero() {
         <p
           className={`mx-auto mt-6 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground transition-all duration-700 delay-[500] ease-out md:text-lg ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
         >
-          A collective of retail traders committed to structured education, risk
+          A collective of traders committed to structured education, risk
           management, and long-term consistency. No hype. Just process.
         </p>
       </div>

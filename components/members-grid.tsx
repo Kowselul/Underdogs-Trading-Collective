@@ -64,7 +64,6 @@ const ownersAndLeads = [
 const membersList = [
   "akqxz",
   "APX",
-  "Pipsthetrader",
   "enigma",
   "AvarixTrading",
   "fortyseven",
@@ -74,7 +73,7 @@ const membersList = [
   "VortexLegion",
   "Insider",
   "Darpan",
-  "Danien Satori",
+  "Darien Satori",
   "0x744k",
 ]
 
@@ -313,7 +312,7 @@ export function MembersGrid() {
             Meet the Collective
           </h1>
           <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
-            The traders behind underdogs. Each member brings unique experience
+            The traders behind Underdogs. Each member brings unique experience
             and perspective to our community.
           </p>
         </motion.div>
