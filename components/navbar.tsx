@@ -88,13 +88,16 @@ export function Navbar() {
             {/* Right side spacer for balance + mobile toggle */}
             <div className="flex items-center">
               <div className="hidden w-[100px] md:block" />
-
-              {/* Mobile menu toggle */}
+              {/* Mobile menu toggle - always visible, floats above overlay */}
               <button
                 type="button"
                 onClick={() => setMobileOpen(!mobileOpen)}
-                className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:hidden"
+                className={cn(
+                  "flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:hidden z-50",
+                  mobileOpen ? "fixed top-5 right-5" : ""
+                )}
                 aria-label="Toggle menu"
+                style={mobileOpen ? { position: 'fixed', top: 20, right: 20 } : {}}
               >
                 {mobileOpen ? (
                   <X className="h-5 w-5" />
@@ -115,8 +118,13 @@ export function Navbar() {
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
         )}
+        onClick={() => setMobileOpen(false)}
+        aria-label="Close menu overlay"
       >
-        <div className="flex flex-col gap-1 px-6 pt-20">
+        <div
+          className="flex flex-col gap-1 px-6 pt-20"
+          onClick={e => e.stopPropagation()}
+        >
           {navLinks.map((link) => (
             <Link
               key={link.href}
