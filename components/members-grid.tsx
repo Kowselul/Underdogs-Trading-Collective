@@ -41,15 +41,16 @@ function InstagramIcon({ className }: { className?: string }) {
 const memberSocials: Record<string, Array<{ label: string; href: string; icon: typeof DiscordIcon }>> = {
   "Kregar":       [{ label: "Instagram", href: "https://www.instagram.com/inkkreate/", icon: InstagramIcon }],
   "VortexLegion": [{ label: "Instagram", href: "https://www.instagram.com/vortexlegion__/", icon: InstagramIcon }],
-  "CRYPTONOMY":   [{ label: "Instagram", href: "https://www.instagram.com/cryptonomy.invo/", icon: InstagramIcon }],
+  "Cryptonomy":   [{ label: "Instagram", href: "https://www.instagram.com/cryptonomy.invo/", icon: InstagramIcon }],
   "0x744k":       [{ label: "Instagram", href: "https://www.instagram.com/anyuon.akol/", icon: InstagramIcon }],
   "Darpan":       [{ label: "Instagram", href: "https://www.instagram.com/darpan.et/", icon: InstagramIcon }, { label: "X", href: "https://x.com/Darpaniumm", icon: XIcon }],
   "Kowse":        [{ label: "Instagram", href: "https://www.instagram.com/bocanci_iulian/", icon: InstagramIcon }],
   "ReflexX":      [{ label: "Instagram", href: "https://www.instagram.com/refflex_777", icon: InstagramIcon }],
+  "Apx":          [{ label: "Instagram", href: "https://www.instagram.com/apx_trades/", icon: InstagramIcon }],
 }
 
 /* ─── Member data by group ─── */
-const head = ["CRYPTONOMY"]
+const head = ["Cryptonomy"]
 
 const ownersAndLeads = [
   "Bones",
@@ -62,12 +63,12 @@ const ownersAndLeads = [
 ]
 
 const membersList = [
-  "akqxz",
-  "APX",
-  "enigma",
+  "Akqxz",
+  "Apx",
+  "Enigma",
   "AvarixTrading",
-  "fortyseven",
-  "John cude",
+  "Fortyseven",
+  "John Cude",
   "Bullmaster",
   "Prateek",
   "VortexLegion",

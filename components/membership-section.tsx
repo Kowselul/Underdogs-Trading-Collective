@@ -44,9 +44,8 @@ const tiers: Tier[] = [
       heading: "Qualification Requirements",
       items: [
         { label: "Join our Discord community", href: "https://discord.gg/SzQnbVrE73" },
-        { label: "Follow Underdogs on Involio", href: "https://involio.com/underdogs" },
-        "Create a trading account or complete a funded challenge using partner links",
-        "Invite two members",
+        "Follow Underdogs socials (see links in footer)",
+        "Invite 3 members",
       ],
     },
     buyHref: "https://discord.gg/SzQnbVrE73",
