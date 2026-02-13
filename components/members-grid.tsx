@@ -1,4 +1,7 @@
+
 "use client"
+
+const head = ["Cryptonomy"]
 
 import { useRef, useCallback, type MouseEvent as ReactMouseEvent } from "react"
 import { Users } from "lucide-react"
@@ -50,7 +53,7 @@ const memberSocials: Record<string, Array<{ label: string; href: string; icon: t
 }
 
 /* ─── Member data by group ─── */
-const head = ["Cryptonomy"]
+
 
 const ownersAndLeads = [
   "Bones",
@@ -319,7 +322,7 @@ export function MembersGrid() {
         </motion.div>
 
         {/* Grouped sections */}
-        <MemberSection label="Founder" title="Head of Underdogs" names={head} tier="head" />
+        <MemberSection label="" title="Head of Underdogs" names={head} tier="head" />
         <MemberSection label="Leadership" title="Owners & Leads" names={ownersAndLeads} tier="lead" />
         <MemberSection label="Community" title="Members" names={membersList} tier="member" />
       </div>
