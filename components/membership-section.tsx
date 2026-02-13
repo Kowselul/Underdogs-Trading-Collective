@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef, useCallback } from "react"
+import { useState, useRef, useCallback, useEffect } from "react"
 import { CreditCard, Check, ArrowRight, ChevronDown } from "lucide-react"
 import { useAnimateOnScroll } from "@/hooks/use-animate-on-scroll"
 
@@ -16,6 +16,7 @@ interface Tier {
   qualification?: { heading: string; items: Array<string | { label: string; href: string }> }
   featured?: boolean
   buyHref: string
+  buyLabel?: string
 }
 
 const tiers: Tier[] = [
@@ -48,7 +49,8 @@ const tiers: Tier[] = [
         "Invite two members",
       ],
     },
-    buyHref: "",
+    buyHref: "https://discord.gg/SzQnbVrE73",
+    buyLabel: "Join Now",
   },
   {
     name: "Underdogs Lite",
@@ -105,7 +107,44 @@ export function MembershipSection() {
   const heading = useAnimateOnScroll()
   const cards = useAnimateOnScroll({ delay: 150 })
   const [expandedTier, setExpandedTier] = useState<string | null>(null)
+  const [cardMinHeight, setCardMinHeight] = useState<number | undefined>(undefined)
   const cardRefs = useRef<Record<string, HTMLDivElement | null>>({})
+  const baseHeight = useRef<number | undefined>(undefined)
+
+  // Measure once on mount to get the natural collapsed height
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => {
+      const heights = Object.values(cardRefs.current)
+        .filter(Boolean)
+        .map((el) => el!.scrollHeight)
+      if (heights.length > 0) {
+        const h = Math.max(...heights)
+        baseHeight.current = h
+        setCardMinHeight(h)
+      }
+    })
+    return () => cancelAnimationFrame(frame)
+  }, [])
+
+  // Re-measure on resize
+  useEffect(() => {
+    const onResize = () => {
+      // Temporarily clear to measure natural height
+      setCardMinHeight(undefined)
+      requestAnimationFrame(() => {
+        const heights = Object.values(cardRefs.current)
+          .filter(Boolean)
+          .map((el) => el!.scrollHeight)
+        if (heights.length > 0) {
+          const h = Math.max(...heights)
+          baseHeight.current = h
+          setCardMinHeight(h)
+        }
+      })
+    }
+    window.addEventListener("resize", onResize)
+    return () => window.removeEventListener("resize", onResize)
+  }, [])
 
   const handleToggle = useCallback((tierName: string, isCurrentlyExpanded: boolean) => {
     if (isCurrentlyExpanded) {
@@ -167,6 +206,7 @@ export function MembershipSection() {
               <div
                 key={tier.name}
                 ref={(el) => { cardRefs.current[tier.name] = el }}
+                style={{ minHeight: cardMinHeight }}
                 className={`group relative flex flex-col overflow-hidden rounded-2xl border backdrop-blur-sm transition-all duration-300 ${
                   tier.featured
                     ? "border-accent/40 bg-card/60 hover:border-accent/60"
@@ -177,7 +217,7 @@ export function MembershipSection() {
                 <div className="border-b border-border/30 px-6 pt-7 pb-5 text-center">
                   {tier.featured && (
                     <span className="mb-2 inline-block text-[10px] font-semibold tracking-widest text-accent/70 uppercase">
-                      Primary
+                      Recommended
                     </span>
                   )}
                   <h2 className="text-lg font-bold text-foreground">
@@ -194,9 +234,14 @@ export function MembershipSection() {
                         </span>
                       </>
                     ) : (
-                      <span className="text-sm font-medium text-muted-foreground">
-                        {tier.priceLabel}
-                      </span>
+                      <div className="flex flex-col items-center">
+                        <span className="text-3xl font-bold tracking-tight text-foreground">
+                          Free
+                        </span>
+                        <span className="mt-1 text-xs text-muted-foreground">
+                          Qualification Based
+                        </span>
+                      </div>
                     )}
                   </div>
                   <p className="mt-3 text-xs leading-relaxed text-muted-foreground/80">
@@ -206,15 +251,15 @@ export function MembershipSection() {
 
                 {/* Card body */}
                 <div className="flex flex-1 flex-col px-6 py-5">
-                  {/* Condensed highlights (always visible) */}
+                  {/* Benefits (always visible) */}
                   <ul className="space-y-3">
-                    {tier.highlights.map((h) => (
-                      <li key={h} className="flex items-start gap-2.5">
+                    {tier.benefits.map((b) => (
+                      <li key={b} className="flex items-start gap-2.5">
                         <div className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded bg-accent/10">
                           <Check className="h-2.5 w-2.5 text-accent" />
                         </div>
                         <span className="text-[13px] leading-relaxed text-foreground/80">
-                          {h}
+                          {b}
                         </span>
                       </li>
                     ))}
@@ -235,25 +280,6 @@ export function MembershipSection() {
                           <p className="text-[13px] leading-relaxed text-muted-foreground">
                             {tier.expandedDescription}
                           </p>
-                        </div>
-
-                        {/* Full benefits */}
-                        <div>
-                          <h3 className="mb-3 text-xs font-semibold tracking-wide text-foreground/60 uppercase">
-                            Full Benefits
-                          </h3>
-                          <ul className="space-y-2.5">
-                            {tier.benefits.map((b) => (
-                              <li key={b} className="flex items-start gap-2.5">
-                                <div className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded bg-accent/10">
-                                  <Check className="h-2.5 w-2.5 text-accent" />
-                                </div>
-                                <span className="text-[13px] leading-relaxed text-foreground/80">
-                                  {b}
-                                </span>
-                              </li>
-                            ))}
-                          </ul>
                         </div>
 
                         {/* Qualification subsection */}
@@ -314,7 +340,7 @@ export function MembershipSection() {
                             : "bg-foreground/[0.08] text-foreground hover:bg-foreground/[0.12]"
                         }`}
                       >
-                        <span>Buy Now</span>
+                        <span>{tier.buyLabel || "Buy Now"}</span>
                         <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover/btn:translate-x-0.5" />
                       </a>
                     )}
