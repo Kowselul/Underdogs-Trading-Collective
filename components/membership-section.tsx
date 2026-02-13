@@ -17,6 +17,8 @@ interface Tier {
   featured?: boolean
   buyHref: string
   buyLabel?: string
+  originalPrice?: string
+  firstBatchNote?: string
 }
 
 const tiers: Tier[] = [
@@ -54,6 +56,7 @@ const tiers: Tier[] = [
   {
     name: "Underdogs Lite",
     price: "$25",
+    originalPrice: "$50",
     description: "Instant access + recorded mentorship content.",
     highlights: [
       "Instant UTC Exclusive access",
@@ -73,10 +76,12 @@ const tiers: Tier[] = [
     ],
     buyHref:
       "https://whop.com/underdogs-trading-collective/?utm_source=store_page",
+    firstBatchNote: "First batch of students get this price!",
   },
   {
     name: "Underdogs Core",
     price: "$50",
+    originalPrice: "$100",
     featured: true,
     description: "Live mentorship + full execution refinement.",
     highlights: [
@@ -98,6 +103,7 @@ const tiers: Tier[] = [
     ],
     buyHref:
       "https://whop.com/underdogs-trading-collective/underdogs-trading-collective-f4/?utm_source=store_page&funnelId=store_5f30788c-1311-45a3-88dc-14ae877c2988",
+    firstBatchNote: "First batch of students get this price!",
   },
 ]
 
@@ -222,15 +228,25 @@ export function MembershipSection() {
                   <h2 className="text-lg font-bold text-foreground">
                     {tier.name}
                   </h2>
-                  <div className="mt-3 flex items-baseline justify-center gap-1">
+                  <div className="mt-3 flex flex-col items-center justify-center gap-1">
                     {tier.price ? (
                       <>
+                        {tier.originalPrice && (
+                          <span className="mb-1 inline-block rounded-full bg-muted/60 px-2 py-0.5 text-xs font-semibold text-muted-foreground/80 line-through">
+                            {tier.originalPrice}
+                          </span>
+                        )}
                         <span className="text-3xl font-bold tracking-tight text-foreground">
                           {tier.price}
                         </span>
                         <span className="text-sm text-muted-foreground">
                           / month
                         </span>
+                        {tier.firstBatchNote && (
+                          <span className="mt-1 inline-block rounded-full bg-accent/10 px-2 py-0.5 text-xs font-medium text-accent">
+                            {tier.firstBatchNote}
+                          </span>
+                        )}
                       </>
                     ) : (
                       <div className="flex flex-col items-center">
