@@ -78,7 +78,6 @@ const tiers: Tier[] = [
     ],
     buyHref:
       "https://whop.com/underdogs-trading-collective/underdogs-trading-collective-f4/?utm_source=store_page&funnelId=store_5f30788c-1311-45a3-88dc-14ae877c2988",
-    firstBatchNote: "First batch of students get this price!",
   },
 ]
 
