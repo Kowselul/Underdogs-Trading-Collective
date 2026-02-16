@@ -54,31 +54,6 @@ const tiers: Tier[] = [
     buyLabel: "Join Now",
   },
   {
-    name: "Underdogs Lite",
-    price: "$25",
-    originalPrice: "$50",
-    description: "Instant access + recorded mentorship content.",
-    highlights: [
-      "Instant UTC Exclusive access",
-      "Recorded mentorship session archive",
-      "Risk management workshops",
-      "Weekly educational updates",
-    ],
-    expandedDescription:
-      "Skip the qualification process and get immediate UTC Exclusive access. Includes a full library of recorded mentorship sessions covering trade breakdowns, risk management frameworks, and execution strategies. Weekly educational updates and community accountability channels keep you on track between sessions.",
-    benefits: [
-      "Instant UTC Exclusive access",
-      "Full archive of recorded mentorship sessions",
-      "Structured trade breakdown library",
-      "Risk management workshops",
-      "Weekly educational updates",
-      "Community accountability channels",
-    ],
-    buyHref:
-      "https://whop.com/underdogs-trading-collective/?utm_source=store_page",
-    firstBatchNote: "First batch of students get this price!",
-  },
-  {
     name: "Underdogs Core",
     price: "$50",
     originalPrice: "$100",
@@ -91,7 +66,7 @@ const tiers: Tier[] = [
       "Priority Q&A access",
     ],
     expandedDescription:
-      "Complete access to everything in Underdogs Lite plus live group mentorship sessions where you can engage directly with educators in real time. Includes execution refinement sessions focused on improving your entries, exits, and risk management under live market conditions. Priority Q&A ensures your questions get addressed first, and the full recorded archive lets you revisit any session.",
+      "Complete access to all core features plus live group mentorship sessions where you can engage directly with educators in real time. Includes execution refinement sessions focused on improving your entries, exits, and risk management under live market conditions. Priority Q&A ensures your questions get addressed first, and the full recorded archive lets you revisit any session.",
     benefits: [
       "Instant UTC Exclusive access",
       "Live group mentorship sessions",
@@ -201,7 +176,7 @@ export function MembershipSection() {
         {/* Pricing grid */}
         <div
           ref={cards.ref}
-          className="mx-auto mt-16 grid max-w-5xl items-start gap-6 md:grid-cols-3"
+          className="mx-auto mt-16 grid max-w-3xl items-start gap-6 md:grid-cols-2 justify-center"
           style={cards.style}
         >
           {tiers.map((tier) => {
