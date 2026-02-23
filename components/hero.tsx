@@ -58,7 +58,7 @@ export function Hero() {
 
         {/* Description */}
         <p
-          className={`mx-auto mt-6 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground transition-all duration-700 delay-[500] ease-out md:text-lg ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+          className={`mx-auto mt-6 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground transition-all duration-700 delay-&lsqb;500&rsqb; ease-out md:text-lg ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
         >
           A collective of traders committed to structured education, risk
           management, and long-term consistency. No hype. Just process.
@@ -70,7 +70,7 @@ export function Hero() {
 
       {/* Scroll indicator */}
       <div
-        className={`absolute bottom-8 left-1/2 -translate-x-1/2 transition-all duration-700 delay-[800ms] ease-out ${loaded ? "opacity-100" : "opacity-0"}`}
+        className={`absolute bottom-8 left-1/2 -translate-x-1/2 transition-all duration-700 delay-&lsqb;800ms&rsqb; ease-out ${loaded ? "opacity-100" : "opacity-0"}`}
       >
         <a
           href="#about"

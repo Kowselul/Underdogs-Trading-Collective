@@ -55,10 +55,10 @@ const tiers: Tier[] = [
   },
   {
     name: "Underdogs Core",
-    price: "$50",
-    originalPrice: "$100",
+    price: "$49.99",
+    originalPrice: "$99.99",
     featured: true,
-    description: "Live mentorship + full execution refinement.",
+    description: "Weekly Live Mentorship Calls + Skill Development Mastery",
     highlights: [
       "Live group mentorship sessions",
       "Real-time trade breakdowns",
@@ -66,16 +66,16 @@ const tiers: Tier[] = [
       "Priority Q&A access",
     ],
     expandedDescription:
-      "Complete access to all core features plus live group mentorship sessions where you can engage directly with educators in real time. Includes execution refinement sessions focused on improving your entries, exits, and risk management under live market conditions. Priority Q&A ensures your questions get addressed first, and the full recorded archive lets you revisit any session.",
+      "Complete access to all core features + live group mentorship sessions where you can engage directly with educators in real time. Includes execution refinement sessions focused on improving your entries, exits, and risk management under live market conditions. Priority Q&A ensures your questions get addressed first, and the full recorded archive lets you revisit any session.",
     benefits: [
-      "Instant UTC Exclusive access",
-      "Live group mentorship sessions",
-      "Real-time trade breakdown discussions",
-      "Execution refinement sessions",
-      "Advanced risk management frameworks",
-      "Priority Q&A access",
-      "Full recorded archive access",
-    ],
+      "Three weekly 90-minute live mentorship sessions",
+      "High-speed trade execution simulators",
+      "Personalized accountability and performance reviews",
+      "Full access to mentorship session replay library",
+      "Priority support from experienced mentors",
+      "Advanced risk management & capital protection training",
+      "Structured trader development tracking system",
+],
     buyHref:
       "https://whop.com/underdogs-trading-collective/underdogs-trading-collective-f4/?utm_source=store_page&funnelId=store_5f30788c-1311-45a3-88dc-14ae877c2988",
   },
@@ -256,7 +256,7 @@ export function MembershipSection() {
 
                   {/* Expanded section */}
                   <div
-                    className={`grid transition-all duration-500 ease-[cubic-bezier(0.16,_1,_0.3,_1)] ${
+                    className={`grid transition-all duration-500 ease-&lsqb;cubic-bezier(0.16,_1,_0.3,_1)&rsqb; ${
                       isExpanded
                         ? "grid-rows-[1fr] opacity-100"
                         : "grid-rows-[0fr] opacity-0"
