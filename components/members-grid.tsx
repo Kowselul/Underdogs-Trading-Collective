@@ -60,7 +60,6 @@ const ownersAndLeads = [
   "James Hunter",
   "ReflexX",
   "Rayhan",
-  "Kregar",
   "Mujahid",
   "Kowse",
 ]
@@ -79,6 +78,7 @@ const membersList = [
   "Darpan",
   "Darien Satori",
   "0x744k",
+    "Kregar",
 ]
 
 /* ─── Helpers ─── */
