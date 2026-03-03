@@ -77,7 +77,7 @@ const tiers: Tier[] = [
       "Structured trader development tracking system",
 ],
     buyHref:
-      "https://whop.com/underdogs-trading-collective/underdogs-trading-collective-f4/?utm_source=store_page&funnelId=store_5f30788c-1311-45a3-88dc-14ae877c2988",
+      "https://whop.com/joined/underdogs-trading-collective/products/futures-trading-mentorship-program/",
   },
 ]
 
